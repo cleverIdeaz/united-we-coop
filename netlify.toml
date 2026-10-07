@@ -1,6 +1,6 @@
 [build]
-  command = "echo 'Static site: no build step required'"
-  publish = "."
+  command = "rm -rf dist && mkdir dist && tar --exclude='./.git' --exclude='./dist' -cf - . | tar -xf - -C dist"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "24"
